@@ -82,4 +82,8 @@ class AdminController extends CI_Controller {
 	{
 		$this->load->view('Admin/base');
 	}
+	public function show_invoice_popup() {
+    $this->load->view('Admin/invoice_popup_view');
+}
+
 }
