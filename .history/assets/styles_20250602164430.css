@@ -1,0 +1,64 @@
+
+*{
+font-family: 'inter', sans-serif;
+}
+/* NAVBAR CSS */
+.navbar {
+     transition: background-color 0.3s ease;
+    background-color: #3702;
+     
+ }
+
+ .navbar-brand img {
+     transition: transform 0.3s ease;
+ }
+
+ .navbar-brand img:hover {
+     transform: scale(1.1);
+ }
+
+ .nav-link {
+     position: relative;
+     transition: color 0.3s ease;
+ }
+
+ .nav-link:hover {
+     color: #6f42c1 !important;
+ }
+
+ .nav-link::after {
+     content: '';
+     position: absolute;
+     width: 0;
+     height: 2px;
+     bottom: 0;
+     left: 0;
+     background-color: #6f42c1;
+     transition: width 0.3s ease;
+ }
+
+ .nav-link:hover::after {
+     width: 100%;
+ }
+
+ .navbar-toggler {
+     border: none;
+ }
+
+ .navbar-toggler-icon {
+     transition: transform 0.3s ease;
+ }
+
+ .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+     transform: rotate(90deg);
+ }
+
+ .icon-btn {
+     transition: transform 0.3s ease, color 0.3s ease;
+ }
+
+ .icon-btn:hover {
+     transform: scale(1.2);
+     color: #6f42c1;
+ }
+

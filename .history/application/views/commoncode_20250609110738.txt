@@ -1,0 +1,150 @@
+<!-- Testimonials Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center position-relative">
+                <!-- Left Arrow -->
+                <button class="btn position-absolute start-0 top-50 translate-middle-y" style="background-color: #5E358E; color: white; border-radius: 50%; width: 40px; height: 40px; z-index: 1; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">←</button>
+                <!-- Testimonial Card 1 -->
+                <div class="col-md-4 text-center mb-4">
+                    <div class="rounded-3 p-4" style="background: linear-gradient(135deg, #5E358E 0%, #8B6BB3 100%); transform: rotate(-5deg); animation: bounce 1s ease-in-out;">
+                        <p class="text-white mb-4">“Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <div class="d-flex justify-content-center mb-3">
+                            <span class="text-warning">★</span>
+                            <span class="text-warning">★</span>
+                            <span class="text-warning">★</span>
+                            <span class="text-warning">★</span>
+                            <span class="text-warning">★</span>
+                        </div>
+                        <p class="text-white mb-0"><strong>Preston Murphy</strong></p>
+                    </div>
+                </div>
+                <!-- Testimonial Card 2 (Hidden on smaller screens) -->
+                <div class="col-md-4 text-center mb-4 d-none d-md-block">
+                    <div class="rounded-3 p-4" style="background: linear-gradient(135deg, #5E358E 0%, #8B6BB3 100%); animation: bounce 1s ease-in-out;">
+                        <p class="text-white mb-4">“Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <div class="d-flex justify-content-center mb-3">
+                            <span class="text-warning">★</span>
+                            <span class="text-warning">★</span>
+                            <span class="text-warning">★</span>
+                            <span class="text-warning">★</span>
+                            <span class="text-warning">★</span>
+                        </div>
+                        <p class="text-white mb-0"><strong>Preston Murphy</strong></p>
+                    </div>
+                </div>
+                <!-- Testimonial Card 3 -->
+                <div class="col-md-4 text-center mb-4">
+                    <div class="rounded-3 p-4" style="background: linear-gradient(135deg, #5E358E 0%, #8B6BB3 100%); transform: rotate(5deg); animation: bounce 1s ease-in-out;">
+                        <p class="text-white mb-4">“Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <div class="d-flex justify-content-center mb-3">
+                            <span class="text-warning">★</span>
+                            <span class="text-warning">★</span>
+                            <span class="text-warning">★</span>
+                            <span class="text-warning">★</span>
+                            <span class="text-warning">★</span>
+                        </div>
+                        <p class="text-white mb-0"><strong>Preston Murphy</strong></p>
+                    </div>
+                </div>
+                <!-- Right Arrow -->
+                <button class="btn position-absolute end-0 top-50 translate-middle-y" style="background-color: #5E358E; color: white; border-radius: 50%; width: 40px; height: 40px; z-index: 1; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">→</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inline Animation Styles -->
+    <style>
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+
+
+       <!-- Product Grid -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+            <!-- Product Cards -->
+            <div class="col">
+                <div class="card product-card">
+                    <img src="<?php echo base_url('assets\products\product (1).png'); ?>" class="card-img-top" alt="Twisted Ring">
+                    <div class="card-body">
+                        <h6 class="card-title product-title">TWISTED RING</h6>
+                        <p class="card-text product-price">$320</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card product-card">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Twisted Ring">
+                    <div class="card-body">
+                        <h6 class="card-title product-title">TWISTED RING</h6>
+                        <p class="card-text product-price">$320</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card product-card">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Twisted Ring">
+                    <div class="card-body">
+                        <h6 class="card-title product-title">TWISTED RING</h6>
+                        <p class="card-text product-price">$320</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card product-card">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Twisted Ring">
+                    <div class="card-body">
+                        <h6 class="card-title product-title">TWISTED RING</h6>
+                        <p class="card-text product-price">$320</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card product-card">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Twisted Ring">
+                    <div class="card-body">
+                        <h6 class="card-title product-title">TWISTED RING</h6>
+                        <p class="card-text product-price">$320</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card product-card">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Twisted Ring">
+                    <div class="card-body">
+                        <h6 class="card-title product-title">TWISTED RING</h6>
+                        <p class="card-text product-price">$320</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card product-card">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Twisted Ring">
+                    <div class="card-body">
+                        <h6 class="card-title product-title">TWISTED RING</h6>
+                        <p class="card-text product-price">$320</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card product-card">
+                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Twisted Ring">
+                    <div class="card-body">
+                        <h6 class="card-title product-title">TWISTED RING</h6>
+                        <p class="card-text product-price">$320</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
