@@ -7,6 +7,7 @@
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <style>
 .profile {
       text-align: center;
@@ -42,8 +43,40 @@ color:white !important;
       z-index:10; 
             background: linear-gradient(90deg, #a259e6 0%, #6d28d9 100%);
 
-             
+             overflow-Y:auto;
     }
+
+
+
+
+
+
+
+
+#sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+#sidebar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);  /* light transparent track */
+}
+
+#sidebar::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.4); /* white-ish thumb */
+  border-radius: 10px;
+}
+
+#sidebar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* For Firefox */
+#sidebar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+
 
 .nav-item .link {
  
@@ -72,9 +105,12 @@ text-shadow: 4px 0px 6px rgba(0,0,0,0.32);
 }
 #productMenu a
 {
-  border:1px solid red;
- color:  #9a55ff !important;
+ 
+}
+.collapse a:hover{
+color:  #9a55ff !important;
 background:white;
+
 }
 .btn1
 {
@@ -98,7 +134,7 @@ background:white;
       transition:transform .25s ease-in-out;
       z-index:1050; 
 background: linear-gradient(90deg, #a259e6 0%, #6d28d9 100%);
-
+      overflow-Y:auto;
 }
 
 }
@@ -108,9 +144,9 @@ background: linear-gradient(90deg, #a259e6 0%, #6d28d9 100%);
 <body>
 
 <aside  class="d-flex bg-purple h-100 col-xl-2 col-md-3 d-lg-block   d-none flex-column  " id="sidebar">
-  <div class="d-flex d-lg-none justify-content-end p-2 b">
+  <div class="d-flex d-lg-none justify-content-end mr-0 p-2 b">
     <button class="btn p-2" id="sidebarToggle" style="background: transparent; border: none;">
-      <i class="fa-solid fa-xmark fs-4 rounded-1 	 px-2 py-1 shadow " onclick="hideSidebar()" style="background:rgba(12, 12, 12, 0.2); backdrop-filter: blur(10px); cursor:pointer"></i>
+      <i class="fa-solid fa-xmark fs-4  text-white	 px-2 py-1  " onclick="hideSidebar()" ></i>
     
     </button>
   </div> 
@@ -128,7 +164,7 @@ background: linear-gradient(90deg, #a259e6 0%, #6d28d9 100%);
       <i class="fas fa-box rounded-circle p-2 fs-4 me-1"></i> Product
     </a>
 
-    <div class="collapse ms-4" id="productMenu" data-bs-parent="#sidebarMenu">
+    <div class="collapse  ms-4" id="productMenu" data-bs-parent="#sidebarMenu">
       <ul class="nav flex-column py-2">
         <li class="nav-item">
           <a href="<?php echo site_url('AdminController/addproduct'); ?>" class="nav-link rounded-pill m-1 text-white">
@@ -158,6 +194,32 @@ background: linear-gradient(90deg, #a259e6 0%, #6d28d9 100%);
         <i class="fas rounded-circle   p-2 fs-4 fa-user-group me-1"></i> Customers
       </a>
     </li>
+
+
+<li class="nav-item ">
+  <!-- Toggle for Plan Submenu -->
+  <a data-bs-toggle="collapse" href="#planMenu" class="nav-link link text-white" role="button" aria-expanded="false" aria-controls="planMenu">
+    <i class="fa-solid rounded-circle   p-2 fs-4  fa-money-check-dollar me-2"></i> Plan
+  </a>
+
+  <!-- Collapsible Plan Submenu -->
+  <div class="collapse ms-4" id="planMenu" data-bs-parent="#sidebarMenu">
+    <ul class="nav flex-column py-2">
+      <li class="nav-item">
+        <a href="<?php echo site_url('AdminController/addproduct'); ?>" class="nav-link rounded-pill m-1 text-white ">
+          <i class="fa-solid fa-gem me-2"></i> 10+1
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="<?php echo site_url('AdminController/product'); ?>" class="nav-link rounded-pill m-1 text-white ">
+          <i class="fa-solid fa-coins me-2"></i> 10+2
+        </a>
+      </li>
+    </ul>
+  </div>
+</li>
+
+
 
 <li class="nav-item log-out justify-self-end fs-6">
   <a href="#" class="nav-link link" data-bs-toggle="modal" data-bs-target="#logoutModal">
