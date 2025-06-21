@@ -74,7 +74,10 @@ color:white !important;
 #sidebar {
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+   
+ 
 }
+
 
 
 
