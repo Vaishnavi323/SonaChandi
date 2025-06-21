@@ -192,6 +192,10 @@ background: linear-gradient(90deg, #a259e6 0%, #6d28d9 100%);
       <a href="<?php echo site_url('AdminController/cust'); ?>" class="nav-link  link ">
         <i class="fas rounded-circle   p-2 fs-4 fa-user-group me-1"></i> Customers
       </a>
+          <li class="nav-item   fs-6">
+      <a href="<?php echo site_url('AdminController/feedback'); ?>" class="nav-link  link ">
+        <i class="fa-solid  p-2 fs-4 me-1 fa-comments"></i> Feedback
+      </a>
     </li>
 
 

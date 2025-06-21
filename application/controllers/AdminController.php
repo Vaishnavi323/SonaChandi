@@ -87,4 +87,9 @@ class AdminController extends CI_Controller {
 	{
 		$this->load->view('Admin/feedback');
 	}
+
+			public function base()
+	{
+		$this->load->view('Admin/base');
+	}
 }

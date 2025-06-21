@@ -118,7 +118,7 @@ color:rgba(229, 188, 24, 0.94);
       border-radius: 20px;
     }
            .gradient-button {
-      background: linear-gradient(to right, #da8cff, #9a55ff);
+background: linear-gradient(90deg, #a259e6 0%, #6d28d9 100%);
       color: white;
       padding: 12px 25px;
       border: none;

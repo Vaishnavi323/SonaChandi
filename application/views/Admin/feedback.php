@@ -128,16 +128,16 @@
 
         <form method="post" action="" >
             <div class="d-flex  justify-content-between  ">
-            <input type="text"  class="mx-1"name="name" id="name" placeholder="Enter Customer Name" required>
+            <input type="text"  class="m-1"name="name" id="name" placeholder="Enter Customer Name" required>
 
             
-            <input type="email" name="email" id="email" placeholder="Enter your Email" required>
+            <input type="email" class="m-1" name="email" id="email" placeholder="Enter your Email" required>
 	</div>
             <div class="d-flex justify-content-between">
-            <input type="tel"  class="mx-1"name="phone" id="phone" placeholder="Enter Mobile number" required>
+            <input type="tel"  class="m-1"name="phone" id="phone" placeholder="Enter Mobile number" required>
 
             
-            <select name="purpose" id="purpose" placeholder="Select the Purpose" required>
+            <select name="purpose" class="m-1" id="purpose" placeholder="Select the Purpose" required>
                 <option value="">Select Purpose</option>
                 <option value="Enquiry">Enquiry</option>
                 <option value="Purchase">Purchase</option>
