@@ -169,11 +169,7 @@ background: linear-gradient(90deg, #a259e6 0%, #6d28d9 100%);
 
     <div class="collapse  ms-4" id="productMenu" data-bs-parent="#sidebarMenu">
       <ul class="nav flex-column py-2">
-        <li class="nav-item">
-          <a href="<?php echo site_url('AdminController/addproduct'); ?>" class="nav-link rounded-pill m-1 text-white">
-            <i class="fas fa-plus me-2"></i> Add Product
-          </a>
-        </li>
+
         <li class="nav-item">
           <a href="<?php echo site_url('AdminController/product'); ?>" class="nav-link rounded-pill m-1 text-white">
             <i class="fas fa-cogs me-2"></i> Manage Product
@@ -209,12 +205,12 @@ background: linear-gradient(90deg, #a259e6 0%, #6d28d9 100%);
   <div class="collapse ms-4" id="planMenu" data-bs-parent="#sidebarMenu">
     <ul class="nav flex-column py-2">
       <li class="nav-item">
-        <a href="<?php echo site_url('AdminController/addproduct'); ?>" class="nav-link rounded-pill m-1 text-white ">
+        <a href="#" class="nav-link rounded-pill m-1 text-white ">
           <i class="fa-solid fa-gem me-2"></i> 10+1
         </a>
       </li>
       <li class="nav-item">
-        <a href="<?php echo site_url('AdminController/product'); ?>" class="nav-link rounded-pill m-1 text-white ">
+        <a href="#" class="nav-link rounded-pill m-1 text-white ">
           <i class="fa-solid fa-coins me-2"></i> 10+2
         </a>
       </li>
