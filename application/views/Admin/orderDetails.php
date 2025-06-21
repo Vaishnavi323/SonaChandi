@@ -253,7 +253,7 @@ html, body {
     padding: 10px;
   }
 }
- .modal-body table {
+ /* .modal-body table {
       width: 100%;
       margin-bottom: 20px;
       border-collapse: collapse;
@@ -286,7 +286,7 @@ Optional: make text clearer
       box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
     } 
 
-    
+     */
 
 
 </style>
@@ -307,9 +307,19 @@ Optional: make text clearer
 <!-- main content here -->
 
   <div class="container my-2">
-    <div class="order-container">
-      <h4> Order99999</h4>
+    <div class="order-container d-flex justify-content-between">
+			<div>
+      <h4> Order</h4>
       <p class="text-muted">Order ID: <strong>356925420</strong></p>
+</div>
+			 <div >
+				<button style="color: #6a00ff;"class="btn bg-white btn-outline-secondary"
+    data-bs-toggle="modal" data-bs-target="#invoiceModal">
+      Generate Invoice <i class="bi bi-eye-fill p-2"></i>
+    </a>
+</button>
+</div>
+  </div>
 
       <div class="row">
         <div class="col-lg-8">
@@ -356,11 +366,7 @@ Optional: make text clearer
 
 
   <!-- Invoice Trigger Button -->
-  <div class="invoice me-auto">
-    <a href="#" data-bs-toggle="modal" data-bs-target="#invoiceModal">
-      Generate Invoice <i class="bi bi-eye-fill p-2"></i>
-    </a>
-  </div>
+ 
 
 </div>
 
@@ -445,18 +451,18 @@ Optional: make text clearer
 
 <div class="modal fade" id="invoiceModal" tabindex="-1" aria-labelledby="invoiceModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-scrollable">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Invoice #AB2324-01</h5>
-				<div class="d-flex gap-2">
+    <div class="modal-content d-flex justify-content-between ml-5">
+      <div class="modal-header d-flex justify-content-between">
+        <h5 class="modal-title">Invoice <br>#AB2324-01</br></h5>
+				
     
-    			<button type="button" class="btn btn-outline-primary btn-sm" onclick="printInvoice()">
-     				 <i class="bi bi-printer"></i> Print</button>
-       		 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    			<div >
+       		 <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
       	</div>
 	
+	
 	</div >
-      <div class="modal-body">
+      <div class="modal-body d-flex-ml-5">
 
         <!-- Invoice Details -->
         <p><strong>Issued:</strong> 01 Aug 2023</p>
@@ -475,7 +481,7 @@ Optional: make text clearer
           </thead>
           <tbody>
             <tr>
-              <td>Service A<br><span class="small-text">Description • <a href="#">Hours log ↗</a></span></td>
+              <td>Service A<br><span class="small-text">Description </span></td>
               <td>2</td>
               <td>$100.00</td>
               <td>$200.00</td>
@@ -489,24 +495,40 @@ Optional: make text clearer
           </tbody>
         </table>
   </div>
-        <div class="d-flex justify-content-between">
+	<div class="row my-2 ">
+        <div class="d-flex justify-content-between mb-2">
           <span>Taxes</span>
           <span>$80.00</span>
         </div>
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between mb-2">
           <span>Discount</span>
           <span>-$10.00</span>
         </div>
         <hr>
-        <div class="d-flex justify-content-between fw-bold">
+        <div class="d-flex justify-content-between fw-bold mb-4">
           <span>Total</span>
           <span>$1820.26</span>
         </div>
+	</div >
 
-        <p class="text-muted mt-3">📅 Please pay within 15 days of receiving this invoice.</p>
-        <p class="text-muted">Digital Product Designer, IN<br>+91 00000 00000 | hello@email.com</p>
+
+        
 
       </div>
+		
+			
+			<div class="modal-footer  d-flex justify-content-between ">
+				
+			<div >
+	<button type="button" class="btn btn-outline-primary btn-sm "  onclick="printPage()">
+     				 <i class="bi bi-printer " ></i> Print</button>
+	</div>
+	
+        <p class="text-muted">Sonachandi , IN<br>+91 123456789 | sonachandi@email.com</p>
+	</div>
+	</div>
+				
+	</div>
     </div>
   </div>
 </div>
@@ -518,7 +540,9 @@ Optional: make text clearer
 	
 
 <script>
-  
+  function printPage() {
+    window.print();
+  }
 
 
 </script>
