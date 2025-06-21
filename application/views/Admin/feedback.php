@@ -32,8 +32,8 @@
         .form-container {
             background: #fff;
             padding: 20px 20px;
-            width: 100%;
-            max-width: 500px;
+            width: 100vw;
+            max-width: 100vw;
             border-radius: 15px;
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
         }
@@ -56,10 +56,11 @@
             width: 100%;
             padding: 10px 15px;
             font-size: 16px;
+			
             border-radius: 10px;
             border: 1px solid #ccc;
-            margin-top: 6px;
-            margin-bottom: 12px;
+            margin-top: 6px!important;
+            margin-bottom: 12px !important;
         }
 
         .time-row {
@@ -76,7 +77,7 @@
             resize: vertical;
         }
            .gradient-button {
-      background: linear-gradient(to right, #da8cff, #9a55ff);
+       background: linear-gradient(90deg, #a259e6 0%, #6d28d9 100%);
       color: white;
       padding: 12px 25px;
       border: none;
@@ -85,7 +86,7 @@
       cursor: pointer;
       transition: 0.3s ease-in-out;
       box-shadow: 0 4px 10px rgba(154, 85, 255, 0.3);
-      margin:0px 180px 0px 180px;
+      
     }
 
     .gradient-button:hover {
@@ -125,15 +126,15 @@
 
 
 
-        <form method="post" action="">
-            
-            <input type="text" name="name" id="name" placeholder="Enter Customer Name" required>
+        <form method="post" action="" >
+            <div class="d-flex  justify-content-between  ">
+            <input type="text"  class="mx-1"name="name" id="name" placeholder="Enter Customer Name" required>
 
             
             <input type="email" name="email" id="email" placeholder="Enter your Email" required>
-
-            
-            <input type="tel" name="phone" id="phone" placeholder="Enter Mobile number" required>
+	</div>
+            <div class="d-flex justify-content-between">
+            <input type="tel"  class="mx-1"name="phone" id="phone" placeholder="Enter Mobile number" required>
 
             
             <select name="purpose" id="purpose" placeholder="Select the Purpose" required>
@@ -141,6 +142,7 @@
                 <option value="Enquiry">Enquiry</option>
                 <option value="Purchase">Purchase</option>
             </select>
+	</div>
 
             <label for="date">Date</label>
             <input type="date" name="date" id="date" required>
@@ -158,7 +160,7 @@
 
             <textarea name="feedback" id="feedback" rows="4" placeholder="Enter feedback..." required></textarea>
 
-             <button class="gradient-button">Submit </button>
+             <button class="gradient-button ms-auto">Submit </button>
         </form>
     </div>
 </div>
