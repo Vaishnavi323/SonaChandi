@@ -74,23 +74,6 @@
       object-fit: cover;
       border-radius: 6px;
     }
-               .gradient-button {
-background: linear-gradient(90deg, #a259e6 0%, #6d28d9 100%);
-
-                color: white;
-      padding: 12px 15px;
-      border: none;
-      border-radius: 10px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.3s ease-in-out;
-      box-shadow: 0 4px 10px rgba(154, 85, 255, 0.3);
-    }
-
-    .gradient-button:hover {
-      opacity: 0.9;
-      transform: scale(1.03);
-    }
 
 
 
@@ -132,12 +115,6 @@ background: linear-gradient(90deg, #a259e6 0%, #6d28d9 100%);
     height: 50px;
   }
 
-  .gradient-button {
-    font-size: 15px;
-    padding: 11px 22px;
-    width: 80%;
-    margin: 10px auto;
-  }
 
   .table-responsive-sm {
     max-height: 400px;
@@ -207,6 +184,50 @@ background: linear-gradient(90deg, #a259e6 0%, #6d28d9 100%);
     font-size: 1rem;
   }
 }
+
+
+
+      .card-custom {
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        padding: 20px;
+        background-color: #fff;
+      }
+
+      .dashed-box {
+        border: 2px dashed #ddd;
+        text-align: center;
+        padding: 40px;
+        border-radius: 6px;
+        color: #aaa;
+      }
+
+      .tag-box span {
+        background-color: #f0f0f0;
+        padding: 5px 10px;
+        margin-right: 5px;
+        border-radius: 20px;
+        display: inline-block;
+      }
+
+      .gradient-button {
+        background: linear-gradient(90deg, #a259e6 0%, #6d28d9 100%);
+        color: white!important;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        box-shadow: 0 4px 10px rgba(154, 85, 255, 0.3);
+      }
+
+      .gradient-button:hover {
+        opacity: 0.9;
+        transform: scale(1.03);
+      }
+
+
   </style>
 </head>
 
@@ -249,9 +270,9 @@ background: linear-gradient(90deg, #a259e6 0%, #6d28d9 100%);
 
     <!-- Add Product Button -->
     <div class="col-12 col-sm-6 col-md-3 text-sm-end mb-2">
-      <a href="<?php echo base_url('AdminController/addproduct'); ?>" class="btn  text-white gradient-button">
-        <i class="fa-solid fa-plus text-white me-1"></i> Add Product
-      </a>
+      <button type="button" class="btn gradient-button" data-bs-toggle="modal" data-bs-target="#addProductModal">
+        <i class="fa-solid fa-plus"></i> Add Product
+      </button>
     </div>
 
   </div>
@@ -285,7 +306,7 @@ background: linear-gradient(90deg, #a259e6 0%, #6d28d9 100%);
                 <td>Rings</td>
                 <td>$44</td>
                 <td>12k</td>
-                <td> <button class="btn "><i class="fa-regular edit-btn fa-pen-to-square fs-5 rounded "></i></button>
+                <td> <button class="btn " data-bs-toggle="modal" data-bs-target="#editProductModal"><i class="fa-regular edit-btn fa-pen-to-square fs-5 rounded "></i></button>
                 </td>
               </tr>
 
@@ -298,7 +319,7 @@ background: linear-gradient(90deg, #a259e6 0%, #6d28d9 100%);
                 <td>Rings</td>
                 <td>$44</td>
                 <td>12k</td>
-                <td> <button class="btn "><i class="fa-regular edit-btn fa-pen-to-square fs-5 rounded "></i></button>
+                <td> <button class="btn " data-bs-toggle="modal" data-bs-target="#editProductModal"><i class="fa-regular edit-btn fa-pen-to-square fs-5 rounded "></i></button>
                 </td>
               </tr>
 
@@ -312,7 +333,7 @@ background: linear-gradient(90deg, #a259e6 0%, #6d28d9 100%);
                 <td>Rings</td>
                 <td>$44</td>
                 <td>12k</td>
-                <td> <button class="btn "><i class="fa-regular edit-btn fa-pen-to-square fs-5 rounded "></i></button>
+                <td> <button class="btn " data-bs-toggle="modal" data-bs-target="#editProductModal"><i class="fa-regular edit-btn fa-pen-to-square fs-5 rounded "></i></button>
                 </td>
               </tr>
               <tr>
@@ -324,7 +345,7 @@ background: linear-gradient(90deg, #a259e6 0%, #6d28d9 100%);
                 <td>Rings</td>
                 <td>$44</td>
                 <td>12k</td>
-                <td> <button class="btn "><i class="fa-regular edit-btn fa-pen-to-square fs-5 rounded "></i></button>
+                <td> <button class="btn " data-bs-toggle="modal" data-bs-target="#editProductModal"><i class="fa-regular edit-btn fa-pen-to-square fs-5 rounded "></i></button>
                 </td>
               </tr>
             </tbody>
@@ -340,93 +361,167 @@ background: linear-gradient(90deg, #a259e6 0%, #6d28d9 100%);
 
 
 
-  <!-- edit product form -->
-  <div
-    class="container-fluid h-100 t position-fixed bg-light edit-product d-none flex- column top-0  align-items-center justify-content-center"
-    style="z-index:9999">
 
-    <div class="card shadow p-4  " style="max-width: 600px; ">
-      <div class=" d-flex justify-content-start w-100">
-        <button class="btn btn-back "><i class="fa-solid fa-arrow-left"></i>
-        </button>
+<!-- Edit Product Modal -->
+<div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="editProductLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      
+      <div class="modal-header border-0">
+
+        <h5 class="modal-title " id="editProductLabel">Edit Product</h5>
       </div>
 
-      <h4 class="text-center mb-4">Edit Product</h4>
-      <form action="#" method="post" enctype="multipart/form-data">
+      <div class="modal-body">
+        <form action="#" method="post" enctype="multipart/form-data">
+          <div class="row">
+            <div class="col-md-6">
+              <input type="text" id="productName" class="form-control mb-md-4 mb-2" placeholder="Enter product name" required>
+            </div>
 
-        <div class="row">
+            <div class="col-md-6">
+              <input type="text" id="category" class="form-control mb-md-4 mb-2" placeholder="Enter category" readonly required>
+            </div>
 
+            <div class="col-md-6">
+              <input type="number" id="price" class="form-control mb-md-4 mb-2" step="0.01" placeholder="Enter price" required>
+            </div>
 
-          <div class=" col-md-6">
-            <input type="text" id="productName" class="form-control mb-md-4 mb-2" placeholder="Enter product name"
-              required>
+            <div class="col-md-12">
+              <textarea id="description" class="form-control mb-md-4 mb-2" rows="3" placeholder="Enter product description"></textarea>
+            </div>
 
+            <div class="col-md-12">
+              <label class="form-label m-1">Current Image</label><br>
+              <img src="<?php echo base_url('assets/Admin/pearl.png'); ?>" alt="Product Image" style="height: 80px;" class="border rounded">
+            </div>
+
+            <div class="col-md-12">
+              <label for="imageUpload" class="form-label m-1">Change Image</label>
+              <input type="file" id="imageUpload" class="form-control mb-md-4 mb-2">
+            </div>
           </div>
-          <div class=" col-md-6">
-            <input type="text" id="category" class="form-control mb-md-4 mb-2" placeholder="Enter category" readonly
-              required>
-          </div>
+        </form>
+      </div>
 
-          <div class=" col-md-6">
-            <input type="text" id="category" class="form-control mb-md-4 mb-2" placeholder="Enter category" readonly
-              required>
-          </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn text-white "style="background: linear-gradient(90deg, #a259e6 0%, #6d28d9 100%);">Update Product</button>
+      </div>
 
-          <div class=" col-md-6">
-            <input type="number" id="price" class="form-control mb-md-4 mb-2" step="0.01" placeholder="Enter price"
-              required>
-          </div>
-
-          <div class=" col-md-12">
-            <textarea id="description" class="form-control mb-md-4 mb-2" rows="3"
-              placeholder="Enter product description"></textarea>
-          </div>
-          <div class=" col-md-12">
-            <label class="form-label m-1">Current Image</label><br>
-            <img src="<?php echo base_url(" assets/Admin/pearl.png"); ?>" alt="Product Image" style="height: 80px;"
-            class="border rounded">
-          </div>
-
-          <div class=" col-md-12">
-            <label for="imageUpload" class="form-label m-1">Change Image</label>
-            <input type="file" id="imageUpload" class="form-control mb-md-4 mb-2">
-          </div>
-
-          <div class="text-center mt-2">
-
-            <button class="btn  ">Update Product</button>
-          </div>
-        </div>
-      </form>
     </div>
   </div>
+</div>
 
 
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addProductModalLabel">Add New Product</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="container p-2">
+                <div class="row">
+                  <!-- Left Section -->
+                  <div class="col-lg-8">
+                    <div class="card-custom mb-4 h-100">
+                      <h6><strong>Information</strong></h6>
+                      <div class="mb-3">
+                        <label class="form-label">Product Name</label>
+                        <input type="text" class="form-control" placeholder="Diamond ring">
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Product Description</label>
+                        <textarea class="form-control" rows="3" placeholder="Product description"></textarea>
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Images</label>
+                        <div class="dashed-box">
+                          <p><a href="#" class="text-decoration-none">Add File</a></p>
+                          <small>Or drag and drop files</small>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                          <label class="form-label">Product Price</label>
+                          <input type="text" class="form-control" placeholder="Enter price">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <label class="form-label">Discount Price</label>
+                          <input type="text" class="form-control" placeholder="Price at Discount">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                          <label class="form-label">Weight</label>
+                          <input type="text" class="form-control" placeholder="Enter Weight">
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Right Section -->
+                  <div class="col-lg-4">
+                    <div class="card-custom mb-4 mt-4">
+                      <h6><strong>Categories</strong></h6>
+                      <div class="form-check"><input type="checkbox" class="form-check-input"> <label class="form-check-label">Rings</label></div>
+                      <div class="form-check"><input type="checkbox" class="form-check-input"> <label class="form-check-label">Earring</label></div>
+                      <div class="form-check"><input type="checkbox" class="form-check-input"> <label class="form-check-label">Bracelet</label></div>
+                      <div class="form-check"><input type="checkbox" class="form-check-input"> <label class="form-check-label">Pendant</label></div>
+                      <div class="form-check mb-2"><input type="checkbox" class="form-check-input"> <label class="form-check-label">Bangles</label></div>
+                      <a href="#" class="text-decoration-none">Create New</a>
+                    </div>
+                    <div class="card-custom mb-4">
+                      <h6><strong>Tags</strong></h6>
+                      <input type="text" class="form-control mb-2" placeholder="Enter tag name">
+                      <div class="tag-box">
+                        <span class="mb-2">Rings ✕</span>
+                        <span class="mb-2">Gold Coins ✕</span>
+                        <span class="mb-2">Women's Necklace ✕</span>
+                      </div>
+                    </div>
+                    <div class="card-custom">
+                      <h6><strong>SEO Settings</strong></h6>
+                      <div class="mb-3">
+                        <label class="form-label">Title</label>
+                        <input type="text" class="form-control">
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">Description</label>
+                        <textarea class="form-control" rows="3"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+<div class="modal-footer d-flex justify-content-between">
+  <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+    <i class="fa-solid fa-xmark me-1"></i> Cancel
+  </button>
+
+  <button type="submit" class="btn text-white" id="saveProductBtn" style="background: linear-gradient(90deg, #a259e6 0%, #6d28d9 100%);">
+    <i class="fa-solid fa-floppy-disk  me-1"></i> Save Product
+  </button>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
 
   <script src="<?php echo base_url("assets/js/sidebar.js"); ?>"></script>
-  <script>
-
-
-    document.querySelectorAll(".edit-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        document.querySelector(".edit-product").classList.remove("d-none");
-        document.querySelector(".edit-product").classList.add("d-flex");
-      });
-    });
-
-    document.querySelector(".btn-back").addEventListener("click", () => {
-      document.querySelector(".edit-product").classList.add("d-none");
-      document.querySelector(".edit-product").classList.remove("d-flex");
-    });
-
-
-
-
-  </script>
 </body>
 
 </html>
